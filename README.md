@@ -1,6 +1,6 @@
 # StepperMotor
 
-● STM32F303 Kit  ● Digital Multimeter  ● Oscilloscope and probes
+● STM32F303 - ARM Cortex-M4 MCU  ● Digital Multimeter  ● Oscilloscope and probes
 
 ● Stepper Motor  ● LV8712T driver board that makes the stepper motor step
 
