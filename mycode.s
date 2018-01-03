@@ -60,36 +60,9 @@ my_Tick:
 @@ Uses nothing
 my_Loop:
     push {lr}
-    push {r0-r1}
-    ldr r1, =myTickCount            @@ - load the address of myTickCount in r1
-    ldr r0, [r1]                    @@ - load the value of r1 in r0
-    cmp r0, #1000                   @@ - Compare the value of r0 with 1000
-    bge HERE                        @@ - if branch is greater than or equals to 1000 jump to a label named HERE
-    pop {r0-r1}
-    pop {pc}                        @@ - Cause the function to return
-HERE: 
-    ldr r5,=myTickCount             @@ - load the address of myTickCount in r5
-    mov r6,#0                       @@ - set r6 value to zero
-    str r6,[r5]                     @@ - store the value of r6 in the address pointed by r5(reset the myTickCount to zero)
-
-    ldr r0, =0                      @@ - passing the parameter in the function BSP_LED_Toggle (r0 = 0)
-    bl   BSP_LED_Toggle             @@ - Call BSP function
-    ldr r0, =1                      @@ - passing the parameter in the function BSP_LED_Toggle (r0 = 1)
-    bl   BSP_LED_Toggle             @@ - Call BSP function
-    ldr r0, =2                      @@ - passing the parameter in the function BSP_LED_Toggle (r0 = 2)
-    bl   BSP_LED_Toggle             @@ - Call BSP function
-    ldr r0, =3                      @@ - passing the parameter in the function BSP_LED_Toggle (r0 = 3)
-    bl   BSP_LED_Toggle             @@ - Call BSP function
-    ldr r0, =4                      @@ - passing the parameter in the function BSP_LED_Toggle (r0 = 4)
-    bl   BSP_LED_Toggle             @@ - Call BSP function
-    ldr r0, =5                      @@ - passing the parameter in the function BSP_LED_Toggle (r0 = 5)
-    bl   BSP_LED_Toggle             @@ - Call BSP function
-    ldr r0, =6                      @@ - passing the parameter in the function BSP_LED_Toggle (r0 = 6)
-    bl   BSP_LED_Toggle             @@ - Call BSP function
-    ldr r0, =7                      @@ - passing the parameter in the function BSP_LED_Toggle (r0 = 7)
-    bl   BSP_LED_Toggle             @@ - Call BSP function
-
+    pop  {pc}
     .size   my_Loop, .-my_Loop    @@ - symbol size (not req)
+
 @@ <function block>
     .align  2               @@ - 2^n alignment (n=2)
     .syntax unified
