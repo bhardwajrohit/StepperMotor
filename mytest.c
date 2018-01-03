@@ -1,7 +1,4 @@
-/* mytest.c:
- *
- *  Test C to assembly interface 
- */
+/* mytest.c : Test C to assembly interface */
 
 #include <stdio.h>
 #include <stdint.h>
